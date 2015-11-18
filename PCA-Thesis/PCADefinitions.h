@@ -2,8 +2,8 @@
 //  PCADefinitions.h
 //  PCA-Thesis
 //
-//  Created by David Ganey on 8/24/14.
-//  Copyright (c) 2014 dhganey. All rights reserved.
+//  Copyright (c) 2015 David Ganey and Jarrett Wilkes.
+//  All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -11,6 +11,15 @@
 #import "Catalyze.h"
 
 #define STD_DEV_CUTOFF = 2
+
+// custom UIColors for UI elements
+#define MAYO_CLINIC_NAVY [UIColor colorWithRed:10.0/255.0 green:100.0/255.0 blue:170.0/255.0 alpha:1.0]
+#define MAYO_CLINIC_NAVY2 [UIColor colorWithRed:0.0/255.0 green:85.0/255.0 blue:170.0/255.0 alpha:1.0]
+#define TABLE_BLUE [UIColor colorWithRed:38.0/255.0 green:156.0/255.0 blue:254.0/255.0 alpha:0.5]
+#define TABLE_GREEN [UIColor colorWithRed:31.0/255.0 green:223.0/255.0 blue:76.0/255.0 alpha:0.5]
+#define TABLE_YELLOW [UIColor colorWithRed:255.0/255.0 green:201.0/255.0 blue:38.0/255.0 alpha:0.5]
+#define TABLE_ORANGE [UIColor colorWithRed:255.0/255.0 green:109.0/255.0 blue:39.0/255.0 alpha:0.5]
+#define TABLE_RED [UIColor colorWithRed:255.0/255.0 green:38.0/255.0 blue:37.0/255.0 alpha:0.5]
 
 @interface PCADefinitions : NSObject
 

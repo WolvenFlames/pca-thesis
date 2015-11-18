@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name     = 'CorePlot'
-  s.version  = '99.99.99'
+  s.version  = '1.6'
   s.license  = 'BSD'
   s.summary  = 'Cocoa plotting framework for Mac OS X and iOS.'
   s.homepage = 'https://github.com/core-plot'
@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
                  'Eric Skroch'    => 'eskroch@mac.com',
                  'Barry Wark'     => 'barrywark@gmail.com' }
 
-  s.source   = { :git => 'https://github.com/core-plot/core-plot.git' }
+  s.source   = { :git => 'https://github.com/core-plot/core-plot.git', :tag => 'release_1.6'}
 
   s.description = 'Core Plot is a plotting framework for OS X and iOS. It provides 2D visualization ' \
                   'of data, and is tightly integrated with Apple technologies like Core Animation, ' \
@@ -24,10 +24,10 @@ Pod::Spec.new do |s|
   s.ios.header_dir = 'ios'
   s.osx.header_dir = 'osx'
   
-  s.source_files = 'framework/Source/*.{h,m}'
-  s.exclude_files = '**/*{TestCase,Tests}.{h,m}'
+  s.source_files = 'framework/Source/*.{h,m}', 'framework/CocoaPods/*.h', 'framework/TestResources/CorePlotProbes.d'
+  s.exclude_files = '**/*{TestCase,Tests}.{h,m}', '**/mainpage.h'
   s.ios.source_files = 'framework/CorePlot-CocoaTouch.h', 'framework/iPhoneOnly/*.{h,m}'
-  s.osx.source_files = 'framework/CorePlot.h', 'framework/MacOnly/*.{h,m}'
+  s.osx.source_files = 'framework/MacOnly/*.{h,m}'
   s.private_header_files = '**/_*.h', '**/CorePlotProbes.h'
 
   s.requires_arc   = true
@@ -36,8 +36,4 @@ Pod::Spec.new do |s|
   s.frameworks     = 'QuartzCore', 'Accelerate'
   s.ios.frameworks = 'UIKit', 'Foundation'
   s.osx.frameworks = 'Cocoa'
-  
-  s.prepare_command = <<-CMD
-    dtrace -h -s framework/TestResources/CorePlotProbes.d -o framework/Source/CorePlotProbes.h
-  CMD
 end

@@ -2,12 +2,11 @@
 //  PCAAppDelegate.m
 //  PCA-Thesis
 //
-//  Created by David Ganey on 4/13/14.
-//  Copyright (c) 2014 dhganey. All rights reserved.
+//  Copyright (c) 2015 David Ganey and Jarrett Wilkes.
+//  All rights reserved.
 //
 
 #import "PCAAppDelegate.h"
-
 #import "Catalyze.h"
 
 @implementation PCAAppDelegate
@@ -15,7 +14,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     //Setup Catalyze
-    [Catalyze setApiKey:@"ios pca 2f708c6f-0ab6-429b-a056-d01622b1ea69" applicationId:@"5735e7c5-2669-4778-afa4-64cf7e5707a6"];
+    [Catalyze setApiKey:@"ios pca dd1bd6cf-c295-410f-bdca-f1b8b12e4f67" applicationId:@"aab508da-a96d-4fb5-86a0-9a75ba3e786e"];
     
     [Catalyze setLoggingLevel:kLoggingLevelDebug]; //comment this line out when deploying! used for high level of logging
     
@@ -31,6 +30,12 @@
     //make back buttons white
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     
+    // give permission for local notifications
+    if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)])
+    {
+        [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
+    }
+    
     //prepare background image
 //    UIImageView* imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"wallpaper-1-white-blue.jpg"]];
 //    imageView.frame = _window.frame;
@@ -39,7 +44,7 @@
     
     return YES;
 }
-							
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

@@ -2,8 +2,8 @@
 //  PCAPatientStatsViewController.h
 //  PCA-Thesis
 //
-//  Created by David Ganey on 2/24/15.
-//  Copyright (c) 2015 dhganey. All rights reserved.
+//  Copyright (c) 2015 David Ganey and Jarrett Wilkes.
+//  All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

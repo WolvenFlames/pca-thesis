@@ -2,8 +2,8 @@
 //  PCADefinitions.m
 //  PCA-Thesis
 //
-//  Created by David Ganey on 8/24/14.
-//  Copyright (c) 2014 dhganey. All rights reserved.
+//  Copyright (c) 2015 David Ganey and Jarrett Wilkes.
+//  All rights reserved.
 //
 
 #import "PCADefinitions.h"
@@ -61,7 +61,7 @@
 }
 
 /**
- Shows an alert which simply displays the passed text. Good for debugging
+ Shows an alert which simply displays the passed text. Good for debugging.
  @param textMessage NSString* text to display
  @return void
  */

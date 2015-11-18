@@ -28,7 +28,7 @@
 		63166E07197C722B006D78D2 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63166E02197C722B006D78D2 /* TPKeyboardAvoidingCollectionView.m */; };
 		63166E08197C722B006D78D2 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63166E04197C722B006D78D2 /* TPKeyboardAvoidingTableView.m */; };
 		63166E09197C722B006D78D2 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 63166E06197C722B006D78D2 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
-		632E4E62197E1A2A00326376 /* PCAMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 632E4E61197E1A2A00326376 /* PCAMainViewController.m */; };
+		632E4E62197E1A2A00326376 /* PCASurveyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 632E4E61197E1A2A00326376 /* PCASurveyViewController.m */; };
 		63438E5B19AA7AA500C25DC5 /* PCADefinitions.m in Sources */ = {isa = PBXBuildFile; fileRef = 63438E5A19AA7AA500C25DC5 /* PCADefinitions.m */; };
 		6351120E19F4BE5C00486293 /* PCACatalyzeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6351120D19F4BE5C00486293 /* PCACatalyzeTests.m */; };
 		6351121419F4C0F200486293 /* PCASymptomEnterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6351121319F4C0F200486293 /* PCASymptomEnterTests.m */; };
@@ -94,10 +94,46 @@
 		63C108EC19DA2CB2005E8C45 /* SocialId.m in Sources */ = {isa = PBXBuildFile; fileRef = 63C108BC19DA2CB2005E8C45 /* SocialId.m */; };
 		63C108F519DA2CB2005E8C45 /* catalyze-ios-sdk.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 63C108C819DA2CB2005E8C45 /* catalyze-ios-sdk.podspec */; };
 		63C108F619DA2CB2005E8C45 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 63C108CC19DA2CB2005E8C45 /* LICENSE */; };
-		63C108F719DA2CB2005E8C45 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 63C108CD19DA2CB2005E8C45 /* README.md */; };
 		63DE728C19AE3742001AA9B9 /* PCAPatientTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DE728B19AE3742001AA9B9 /* PCAPatientTableViewController.m */; };
-		63DF0CC219CF7AFD005814BA /* PCAAllDoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DF0CC119CF7AFD005814BA /* PCAAllDoneViewController.m */; };
+		63DF0CC219CF7AFD005814BA /* PCASummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63DF0CC119CF7AFD005814BA /* PCASummaryViewController.m */; };
 		63E9126119D5D3E400465856 /* PCAPatientDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63E9126019D5D3E400465856 /* PCAPatientDetailViewController.m */; };
+		87032E121BBE4B0D005A24EB /* PCADashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87032E111BBE4B0D005A24EB /* PCADashboardViewController.m */; };
+		871EAB351BC789B1004B5797 /* alert-uptodate.png in Resources */ = {isa = PBXBuildFile; fileRef = 871EAB1D1BC789B1004B5797 /* alert-uptodate.png */; };
+		871EAB371BC789B1004B5797 /* background-dashboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 871EAB1F1BC789B1004B5797 /* background-dashboard.png */; };
+		871EAB3A1BC789B1004B5797 /* button-blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 871EAB221BC789B1004B5797 /* button-blue.png */; };
+		871EAB3B1BC789B1004B5797 /* button-white.png in Resources */ = {isa = PBXBuildFile; fileRef = 871EAB231BC789B1004B5797 /* button-white.png */; };
+		871EAB3C1BC789B1004B5797 /* icon-contacts.png in Resources */ = {isa = PBXBuildFile; fileRef = 871EAB241BC789B1004B5797 /* icon-contacts.png */; };
+		871EAB3E1BC789B1004B5797 /* icon-profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 871EAB261BC789B1004B5797 /* icon-profile.png */; };
+		871EAB401BC789B1004B5797 /* icon-58px.png in Resources */ = {isa = PBXBuildFile; fileRef = 871EAB281BC789B1004B5797 /* icon-58px.png */; };
+		871EAB411BC789B1004B5797 /* icon-80px.png in Resources */ = {isa = PBXBuildFile; fileRef = 871EAB291BC789B1004B5797 /* icon-80px.png */; };
+		871EAB421BC789B1004B5797 /* icon-87px.png in Resources */ = {isa = PBXBuildFile; fileRef = 871EAB2A1BC789B1004B5797 /* icon-87px.png */; };
+		871EAB431BC789B1004B5797 /* icon-120px.png in Resources */ = {isa = PBXBuildFile; fileRef = 871EAB2B1BC789B1004B5797 /* icon-120px.png */; };
+		871EAB441BC789B1004B5797 /* icon-180px.png in Resources */ = {isa = PBXBuildFile; fileRef = 871EAB2C1BC789B1004B5797 /* icon-180px.png */; };
+		871EAB451BC789B1004B5797 /* splash-screen-640-960.png in Resources */ = {isa = PBXBuildFile; fileRef = 871EAB2D1BC789B1004B5797 /* splash-screen-640-960.png */; };
+		871EAB461BC789B1004B5797 /* splash-screen-640-1136.png in Resources */ = {isa = PBXBuildFile; fileRef = 871EAB2E1BC789B1004B5797 /* splash-screen-640-1136.png */; };
+		871EAB471BC789B1004B5797 /* background-survey.png in Resources */ = {isa = PBXBuildFile; fileRef = 871EAB2F1BC789B1004B5797 /* background-survey.png */; };
+		871EAB481BC789B1004B5797 /* survey-button-blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 871EAB301BC789B1004B5797 /* survey-button-blue.png */; };
+		871EAB491BC789B1004B5797 /* survey-button-green.png in Resources */ = {isa = PBXBuildFile; fileRef = 871EAB311BC789B1004B5797 /* survey-button-green.png */; };
+		871EAB4A1BC789B1004B5797 /* survey-button-orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 871EAB321BC789B1004B5797 /* survey-button-orange.png */; };
+		871EAB4B1BC789B1004B5797 /* survey-button-red.png in Resources */ = {isa = PBXBuildFile; fileRef = 871EAB331BC789B1004B5797 /* survey-button-red.png */; };
+		871EAB4C1BC789B1004B5797 /* survey-button-yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = 871EAB341BC789B1004B5797 /* survey-button-yellow.png */; };
+		873A4B5D1BF833170093751C /* lipinski-bio.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 873A4B5C1BF833170093751C /* lipinski-bio.jpg */; };
+		875C44A11BCE3E8800055F9E /* PCAContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 875C44A01BCE3E8800055F9E /* PCAContactsViewController.m */; };
+		875C44AC1BCE3F4E00055F9E /* PCASettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 875C44AB1BCE3F4E00055F9E /* PCASettingsViewController.m */; };
+		875C44AF1BCE3F8A00055F9E /* PCAProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 875C44AE1BCE3F8A00055F9E /* PCAProfileViewController.m */; };
+		875C44B21BCE3FA100055F9E /* PCAHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 875C44B11BCE3FA100055F9E /* PCAHistoryViewController.m */; };
+		879800A51BD763D500BD53BC /* background-login.png in Resources */ = {isa = PBXBuildFile; fileRef = 879800A41BD763D500BD53BC /* background-login.png */; };
+		879800AF1BD763E500BD53BC /* mayo-clinic-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 879800AE1BD763E500BD53BC /* mayo-clinic-logo.png */; };
+		879800B21BD76AAE00BD53BC /* PCATableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 879800B11BD76AAE00BD53BC /* PCATableViewController.m */; };
+		E126D7481BE8170F004F9AF7 /* PCAHistoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E126D7471BE8170F004F9AF7 /* PCAHistoryTableViewController.m */; };
+		E1715C0A1BE17AA6004DA504 /* PCAEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1715C091BE17AA6004DA504 /* PCAEditViewController.m */; };
+		E19934CF1BEAB35E00A96458 /* arrow-left.png in Resources */ = {isa = PBXBuildFile; fileRef = E19934CC1BEAB35E00A96458 /* arrow-left.png */; };
+		E19934D01BEAB35E00A96458 /* arrow-right.png in Resources */ = {isa = PBXBuildFile; fileRef = E19934CD1BEAB35E00A96458 /* arrow-right.png */; };
+		E19934D11BEAB35E00A96458 /* background-history.png in Resources */ = {isa = PBXBuildFile; fileRef = E19934CE1BEAB35E00A96458 /* background-history.png */; };
+		E1F1006D1BE8089C00F0BD49 /* alert-warning.png in Resources */ = {isa = PBXBuildFile; fileRef = E1F100661BE8089C00F0BD49 /* alert-warning.png */; };
+		E1F100701BE8089C00F0BD49 /* icon-history.png in Resources */ = {isa = PBXBuildFile; fileRef = E1F100691BE8089C00F0BD49 /* icon-history.png */; };
+		E1F100721BE8089C00F0BD49 /* icon-settings.png in Resources */ = {isa = PBXBuildFile; fileRef = E1F1006B1BE8089C00F0BD49 /* icon-settings.png */; };
+		E1F100751BE808A900F0BD49 /* alert-urgent.png in Resources */ = {isa = PBXBuildFile; fileRef = E1F100741BE808A900F0BD49 /* alert-urgent.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -172,8 +208,8 @@
 		63166E04197C722B006D78D2 /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TPKeyboardAvoidingTableView.m; path = TPKeyboardAvoiding/TPKeyboardAvoiding/TPKeyboardAvoiding/TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
 		63166E05197C722B006D78D2 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+TPKeyboardAvoidingAdditions.h"; path = "TPKeyboardAvoiding/TPKeyboardAvoiding/TPKeyboardAvoiding/UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
 		63166E06197C722B006D78D2 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+TPKeyboardAvoidingAdditions.m"; path = "TPKeyboardAvoiding/TPKeyboardAvoiding/TPKeyboardAvoiding/UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
-		632E4E60197E1A2A00326376 /* PCAMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCAMainViewController.h; sourceTree = "<group>"; };
-		632E4E61197E1A2A00326376 /* PCAMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCAMainViewController.m; sourceTree = "<group>"; };
+		632E4E60197E1A2A00326376 /* PCASurveyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCASurveyViewController.h; sourceTree = "<group>"; };
+		632E4E61197E1A2A00326376 /* PCASurveyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCASurveyViewController.m; sourceTree = "<group>"; };
 		63438E5919AA7AA500C25DC5 /* PCADefinitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCADefinitions.h; sourceTree = "<group>"; };
 		63438E5A19AA7AA500C25DC5 /* PCADefinitions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCADefinitions.m; sourceTree = "<group>"; };
 		6351120D19F4BE5C00486293 /* PCACatalyzeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCACatalyzeTests.m; sourceTree = "<group>"; };
@@ -186,7 +222,6 @@
 		6351121C19F4C27C00486293 /* AsyncXCTestingKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = AsyncXCTestingKit.xcodeproj; sourceTree = "<group>"; };
 		638611001A2A393F00B47B2E /* sliderTick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sliderTick.png; path = Images/sliderTick.png; sourceTree = "<group>"; };
 		63905457196BA59900A6848F /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
-		63AA0C3819CC8BA700C05C97 /* readme.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.markdown; sourceTree = "<group>"; };
 		63AB512A1A9D24E30061D99F /* CorePlot-CocoaTouch.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "CorePlot-CocoaTouch.xcodeproj"; path = "core-plot/framework/CorePlot-CocoaTouch.xcodeproj"; sourceTree = "<group>"; };
 		63AB51341A9D25640061D99F /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		63AB51371A9D26960061D99F /* PCAPatientStatsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCAPatientStatsViewController.h; sourceTree = "<group>"; };
@@ -287,13 +322,57 @@
 		63C108C819DA2CB2005E8C45 /* catalyze-ios-sdk.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "catalyze-ios-sdk.podspec"; sourceTree = "<group>"; };
 		63C108C919DA2CB2005E8C45 /* catalyze-ios-sdk.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = "catalyze-ios-sdk.xcodeproj"; sourceTree = "<group>"; };
 		63C108CC19DA2CB2005E8C45 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		63C108CD19DA2CB2005E8C45 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		63DE728A19AE3742001AA9B9 /* PCAPatientTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCAPatientTableViewController.h; sourceTree = "<group>"; };
 		63DE728B19AE3742001AA9B9 /* PCAPatientTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCAPatientTableViewController.m; sourceTree = "<group>"; };
-		63DF0CC019CF7AFD005814BA /* PCAAllDoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCAAllDoneViewController.h; sourceTree = "<group>"; };
-		63DF0CC119CF7AFD005814BA /* PCAAllDoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCAAllDoneViewController.m; sourceTree = "<group>"; };
+		63DF0CC019CF7AFD005814BA /* PCASummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCASummaryViewController.h; sourceTree = "<group>"; };
+		63DF0CC119CF7AFD005814BA /* PCASummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCASummaryViewController.m; sourceTree = "<group>"; };
 		63E9125F19D5D3E400465856 /* PCAPatientDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCAPatientDetailViewController.h; sourceTree = "<group>"; };
 		63E9126019D5D3E400465856 /* PCAPatientDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCAPatientDetailViewController.m; sourceTree = "<group>"; };
+		87032E101BBE4B0D005A24EB /* PCADashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCADashboardViewController.h; sourceTree = "<group>"; };
+		87032E111BBE4B0D005A24EB /* PCADashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCADashboardViewController.m; sourceTree = "<group>"; };
+		871EAB1D1BC789B1004B5797 /* alert-uptodate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alert-uptodate.png"; sourceTree = "<group>"; };
+		871EAB1F1BC789B1004B5797 /* background-dashboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-dashboard.png"; sourceTree = "<group>"; };
+		871EAB221BC789B1004B5797 /* button-blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-blue.png"; sourceTree = "<group>"; };
+		871EAB231BC789B1004B5797 /* button-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-white.png"; sourceTree = "<group>"; };
+		871EAB241BC789B1004B5797 /* icon-contacts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-contacts.png"; sourceTree = "<group>"; };
+		871EAB261BC789B1004B5797 /* icon-profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-profile.png"; sourceTree = "<group>"; };
+		871EAB281BC789B1004B5797 /* icon-58px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-58px.png"; sourceTree = "<group>"; };
+		871EAB291BC789B1004B5797 /* icon-80px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-80px.png"; sourceTree = "<group>"; };
+		871EAB2A1BC789B1004B5797 /* icon-87px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-87px.png"; sourceTree = "<group>"; };
+		871EAB2B1BC789B1004B5797 /* icon-120px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-120px.png"; sourceTree = "<group>"; };
+		871EAB2C1BC789B1004B5797 /* icon-180px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-180px.png"; sourceTree = "<group>"; };
+		871EAB2D1BC789B1004B5797 /* splash-screen-640-960.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash-screen-640-960.png"; sourceTree = "<group>"; };
+		871EAB2E1BC789B1004B5797 /* splash-screen-640-1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash-screen-640-1136.png"; sourceTree = "<group>"; };
+		871EAB2F1BC789B1004B5797 /* background-survey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-survey.png"; sourceTree = "<group>"; };
+		871EAB301BC789B1004B5797 /* survey-button-blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "survey-button-blue.png"; sourceTree = "<group>"; };
+		871EAB311BC789B1004B5797 /* survey-button-green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "survey-button-green.png"; sourceTree = "<group>"; };
+		871EAB321BC789B1004B5797 /* survey-button-orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "survey-button-orange.png"; sourceTree = "<group>"; };
+		871EAB331BC789B1004B5797 /* survey-button-red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "survey-button-red.png"; sourceTree = "<group>"; };
+		871EAB341BC789B1004B5797 /* survey-button-yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "survey-button-yellow.png"; sourceTree = "<group>"; };
+		873A4B5C1BF833170093751C /* lipinski-bio.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "lipinski-bio.jpg"; sourceTree = "<group>"; };
+		875C449F1BCE3E8800055F9E /* PCAContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCAContactsViewController.h; sourceTree = "<group>"; };
+		875C44A01BCE3E8800055F9E /* PCAContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCAContactsViewController.m; sourceTree = "<group>"; };
+		875C44AA1BCE3F4E00055F9E /* PCASettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCASettingsViewController.h; sourceTree = "<group>"; };
+		875C44AB1BCE3F4E00055F9E /* PCASettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCASettingsViewController.m; sourceTree = "<group>"; };
+		875C44AD1BCE3F8A00055F9E /* PCAProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCAProfileViewController.h; sourceTree = "<group>"; };
+		875C44AE1BCE3F8A00055F9E /* PCAProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCAProfileViewController.m; sourceTree = "<group>"; };
+		875C44B01BCE3FA100055F9E /* PCAHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCAHistoryViewController.h; sourceTree = "<group>"; };
+		875C44B11BCE3FA100055F9E /* PCAHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCAHistoryViewController.m; sourceTree = "<group>"; };
+		879800A41BD763D500BD53BC /* background-login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-login.png"; sourceTree = "<group>"; };
+		879800AE1BD763E500BD53BC /* mayo-clinic-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mayo-clinic-logo.png"; sourceTree = "<group>"; };
+		879800B01BD76AAE00BD53BC /* PCATableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCATableViewController.h; sourceTree = "<group>"; };
+		879800B11BD76AAE00BD53BC /* PCATableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCATableViewController.m; sourceTree = "<group>"; };
+		E126D7461BE8170F004F9AF7 /* PCAHistoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCAHistoryTableViewController.h; sourceTree = "<group>"; };
+		E126D7471BE8170F004F9AF7 /* PCAHistoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCAHistoryTableViewController.m; sourceTree = "<group>"; };
+		E1715C081BE17AA6004DA504 /* PCAEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCAEditViewController.h; sourceTree = "<group>"; };
+		E1715C091BE17AA6004DA504 /* PCAEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCAEditViewController.m; sourceTree = "<group>"; };
+		E19934CC1BEAB35E00A96458 /* arrow-left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-left.png"; sourceTree = "<group>"; };
+		E19934CD1BEAB35E00A96458 /* arrow-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-right.png"; sourceTree = "<group>"; };
+		E19934CE1BEAB35E00A96458 /* background-history.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-history.png"; sourceTree = "<group>"; };
+		E1F100661BE8089C00F0BD49 /* alert-warning.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alert-warning.png"; sourceTree = "<group>"; };
+		E1F100691BE8089C00F0BD49 /* icon-history.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-history.png"; sourceTree = "<group>"; };
+		E1F1006B1BE8089C00F0BD49 /* icon-settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-settings.png"; sourceTree = "<group>"; };
+		E1F100741BE808A900F0BD49 /* alert-urgent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alert-urgent.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -402,7 +481,6 @@
 				638610FD1A2A366E00B47B2E /* Images */,
 				6351121519F4C27C00486293 /* AsyncXCTestingKit */,
 				63C1087719DA2CB2005E8C45 /* catalyze-ios-sdk */,
-				63AA0C3819CC8BA700C05C97 /* readme.markdown */,
 				63166E00197C71AF006D78D2 /* TPKeyboard */,
 				63B503C218FB43C20017F906 /* PCA-Thesis */,
 				63B503E118FB43C20017F906 /* PCA-ThesisTests */,
@@ -448,22 +526,38 @@
 				63B503CB18FB43C20017F906 /* PCAAppDelegate.h */,
 				63B503CC18FB43C20017F906 /* PCAAppDelegate.m */,
 				63B503CE18FB43C20017F906 /* Main.storyboard */,
-				63AB51371A9D26960061D99F /* PCAPatientStatsViewController.h */,
-				63AB51381A9D26960061D99F /* PCAPatientStatsViewController.m */,
-				63DF0CC019CF7AFD005814BA /* PCAAllDoneViewController.h */,
-				63DF0CC119CF7AFD005814BA /* PCAAllDoneViewController.m */,
-				632E4E60197E1A2A00326376 /* PCAMainViewController.h */,
-				632E4E61197E1A2A00326376 /* PCAMainViewController.m */,
-				63DE728A19AE3742001AA9B9 /* PCAPatientTableViewController.h */,
-				63DE728B19AE3742001AA9B9 /* PCAPatientTableViewController.m */,
-				63E9125F19D5D3E400465856 /* PCAPatientDetailViewController.h */,
-				63E9126019D5D3E400465856 /* PCAPatientDetailViewController.m */,
 				63438E5919AA7AA500C25DC5 /* PCADefinitions.h */,
 				63438E5A19AA7AA500C25DC5 /* PCADefinitions.m */,
 				63166DFA197C56FB006D78D2 /* PCASignupViewController.h */,
 				63166DFB197C56FB006D78D2 /* PCASignupViewController.m */,
 				63B503D118FB43C20017F906 /* PCALoginViewController.h */,
 				63B503D218FB43C20017F906 /* PCALoginViewController.m */,
+				87032E101BBE4B0D005A24EB /* PCADashboardViewController.h */,
+				87032E111BBE4B0D005A24EB /* PCADashboardViewController.m */,
+				632E4E60197E1A2A00326376 /* PCASurveyViewController.h */,
+				632E4E61197E1A2A00326376 /* PCASurveyViewController.m */,
+				63DF0CC019CF7AFD005814BA /* PCASummaryViewController.h */,
+				63DF0CC119CF7AFD005814BA /* PCASummaryViewController.m */,
+				879800B01BD76AAE00BD53BC /* PCATableViewController.h */,
+				879800B11BD76AAE00BD53BC /* PCATableViewController.m */,
+				E1715C081BE17AA6004DA504 /* PCAEditViewController.h */,
+				E1715C091BE17AA6004DA504 /* PCAEditViewController.m */,
+				875C44AD1BCE3F8A00055F9E /* PCAProfileViewController.h */,
+				875C44AE1BCE3F8A00055F9E /* PCAProfileViewController.m */,
+				875C44B01BCE3FA100055F9E /* PCAHistoryViewController.h */,
+				875C44B11BCE3FA100055F9E /* PCAHistoryViewController.m */,
+				E126D7461BE8170F004F9AF7 /* PCAHistoryTableViewController.h */,
+				E126D7471BE8170F004F9AF7 /* PCAHistoryTableViewController.m */,
+				875C449F1BCE3E8800055F9E /* PCAContactsViewController.h */,
+				875C44A01BCE3E8800055F9E /* PCAContactsViewController.m */,
+				875C44AA1BCE3F4E00055F9E /* PCASettingsViewController.h */,
+				875C44AB1BCE3F4E00055F9E /* PCASettingsViewController.m */,
+				63DE728A19AE3742001AA9B9 /* PCAPatientTableViewController.h */,
+				63DE728B19AE3742001AA9B9 /* PCAPatientTableViewController.m */,
+				63E9125F19D5D3E400465856 /* PCAPatientDetailViewController.h */,
+				63E9126019D5D3E400465856 /* PCAPatientDetailViewController.m */,
+				63AB51371A9D26960061D99F /* PCAPatientStatsViewController.h */,
+				63AB51381A9D26960061D99F /* PCAPatientStatsViewController.m */,
 				63B503D418FB43C20017F906 /* Images.xcassets */,
 				63B503C318FB43C20017F906 /* Supporting Files */,
 			);
@@ -473,6 +567,35 @@
 		63B503C318FB43C20017F906 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				879800A41BD763D500BD53BC /* background-login.png */,
+				871EAB1F1BC789B1004B5797 /* background-dashboard.png */,
+				E19934CE1BEAB35E00A96458 /* background-history.png */,
+				871EAB2F1BC789B1004B5797 /* background-survey.png */,
+				879800AE1BD763E500BD53BC /* mayo-clinic-logo.png */,
+				871EAB221BC789B1004B5797 /* button-blue.png */,
+				871EAB231BC789B1004B5797 /* button-white.png */,
+				871EAB1D1BC789B1004B5797 /* alert-uptodate.png */,
+				E1F100661BE8089C00F0BD49 /* alert-warning.png */,
+				E1F100741BE808A900F0BD49 /* alert-urgent.png */,
+				871EAB261BC789B1004B5797 /* icon-profile.png */,
+				E1F100691BE8089C00F0BD49 /* icon-history.png */,
+				871EAB241BC789B1004B5797 /* icon-contacts.png */,
+				E1F1006B1BE8089C00F0BD49 /* icon-settings.png */,
+				E19934CC1BEAB35E00A96458 /* arrow-left.png */,
+				E19934CD1BEAB35E00A96458 /* arrow-right.png */,
+				871EAB311BC789B1004B5797 /* survey-button-green.png */,
+				871EAB301BC789B1004B5797 /* survey-button-blue.png */,
+				871EAB341BC789B1004B5797 /* survey-button-yellow.png */,
+				871EAB321BC789B1004B5797 /* survey-button-orange.png */,
+				871EAB331BC789B1004B5797 /* survey-button-red.png */,
+				871EAB2D1BC789B1004B5797 /* splash-screen-640-960.png */,
+				871EAB2E1BC789B1004B5797 /* splash-screen-640-1136.png */,
+				871EAB281BC789B1004B5797 /* icon-58px.png */,
+				871EAB291BC789B1004B5797 /* icon-80px.png */,
+				871EAB2A1BC789B1004B5797 /* icon-87px.png */,
+				871EAB2B1BC789B1004B5797 /* icon-120px.png */,
+				871EAB2C1BC789B1004B5797 /* icon-180px.png */,
+				873A4B5C1BF833170093751C /* lipinski-bio.jpg */,
 				63B503C418FB43C20017F906 /* PCA-Thesis-Info.plist */,
 				63B503C518FB43C20017F906 /* InfoPlist.strings */,
 				63B503C818FB43C20017F906 /* main.m */,
@@ -509,7 +632,6 @@
 				63C108C819DA2CB2005E8C45 /* catalyze-ios-sdk.podspec */,
 				63C108C919DA2CB2005E8C45 /* catalyze-ios-sdk.xcodeproj */,
 				63C108CC19DA2CB2005E8C45 /* LICENSE */,
-				63C108CD19DA2CB2005E8C45 /* README.md */,
 			);
 			name = "catalyze-ios-sdk";
 			path = "catalyze/catalyze-ios-sdk";
@@ -666,7 +788,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = PCA;
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = dhganey;
 				TargetAttributes = {
 					63AA0C2F19CC8AEB00C05C97 = {
@@ -762,12 +884,41 @@
 			buildActionMask = 2147483647;
 			files = (
 				63C108CE19DA2CB2005E8C45 /* .gitignore in Resources */,
+				879800A51BD763D500BD53BC /* background-login.png in Resources */,
 				63C108F619DA2CB2005E8C45 /* LICENSE in Resources */,
 				6303ED071A2A3C4700C3F2F7 /* wallpaper-1-white-blue.jpg in Resources */,
+				E19934D11BEAB35E00A96458 /* background-history.png in Resources */,
+				873A4B5D1BF833170093751C /* lipinski-bio.jpg in Resources */,
 				63B503D518FB43C20017F906 /* Images.xcassets in Resources */,
+				871EAB441BC789B1004B5797 /* icon-180px.png in Resources */,
+				871EAB371BC789B1004B5797 /* background-dashboard.png in Resources */,
+				879800AF1BD763E500BD53BC /* mayo-clinic-logo.png in Resources */,
+				E19934D01BEAB35E00A96458 /* arrow-right.png in Resources */,
+				E19934CF1BEAB35E00A96458 /* arrow-left.png in Resources */,
+				871EAB4B1BC789B1004B5797 /* survey-button-red.png in Resources */,
+				871EAB491BC789B1004B5797 /* survey-button-green.png in Resources */,
+				871EAB3A1BC789B1004B5797 /* button-blue.png in Resources */,
+				E1F100721BE8089C00F0BD49 /* icon-settings.png in Resources */,
+				871EAB401BC789B1004B5797 /* icon-58px.png in Resources */,
+				871EAB451BC789B1004B5797 /* splash-screen-640-960.png in Resources */,
 				6303ED0F1A2A3DA100C3F2F7 /* test.jpg in Resources */,
+				871EAB351BC789B1004B5797 /* alert-uptodate.png in Resources */,
+				871EAB4C1BC789B1004B5797 /* survey-button-yellow.png in Resources */,
+				871EAB421BC789B1004B5797 /* icon-87px.png in Resources */,
+				871EAB471BC789B1004B5797 /* background-survey.png in Resources */,
+				E1F100701BE8089C00F0BD49 /* icon-history.png in Resources */,
+				871EAB4A1BC789B1004B5797 /* survey-button-orange.png in Resources */,
 				63B503C718FB43C20017F906 /* InfoPlist.strings in Resources */,
 				63C108F519DA2CB2005E8C45 /* catalyze-ios-sdk.podspec in Resources */,
+				871EAB3E1BC789B1004B5797 /* icon-profile.png in Resources */,
+				871EAB411BC789B1004B5797 /* icon-80px.png in Resources */,
+				871EAB461BC789B1004B5797 /* splash-screen-640-1136.png in Resources */,
+				871EAB431BC789B1004B5797 /* icon-120px.png in Resources */,
+				871EAB3C1BC789B1004B5797 /* icon-contacts.png in Resources */,
+				871EAB3B1BC789B1004B5797 /* button-white.png in Resources */,
+				E1F1006D1BE8089C00F0BD49 /* alert-warning.png in Resources */,
+				E1F100751BE808A900F0BD49 /* alert-urgent.png in Resources */,
+				871EAB481BC789B1004B5797 /* survey-button-blue.png in Resources */,
 				638611011A2A393F00B47B2E /* sliderTick.png in Resources */,
 				63B503D018FB43C20017F906 /* Main.storyboard in Resources */,
 			);
@@ -809,15 +960,18 @@
 				63C108EA19DA2CB2005E8C45 /* NSObject+Properties.m in Sources */,
 				63C108D519DA2CB2005E8C45 /* CatalyzeQuery.m in Sources */,
 				63C108D919DA2CB2005E8C45 /* Geocode.m in Sources */,
+				875C44A11BCE3E8800055F9E /* PCAContactsViewController.m in Sources */,
 				63166DFF197C719B006D78D2 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				63E9126119D5D3E400465856 /* PCAPatientDetailViewController.m in Sources */,
 				63B503D318FB43C20017F906 /* PCALoginViewController.m in Sources */,
 				63C108CF19DA2CB2005E8C45 /* Address.m in Sources */,
 				63C108E619DA2CB2005E8C45 /* AFURLResponseSerialization.m in Sources */,
-				63C108F719DA2CB2005E8C45 /* README.md in Sources */,
+				87032E121BBE4B0D005A24EB /* PCADashboardViewController.m in Sources */,
 				63B503C918FB43C20017F906 /* main.m in Sources */,
 				63C108E919DA2CB2005E8C45 /* Name.m in Sources */,
+				E126D7481BE8170F004F9AF7 /* PCAHistoryTableViewController.m in Sources */,
 				63C108DE19DA2CB2005E8C45 /* AFNetworkActivityLogger.m in Sources */,
+				879800B21BD76AAE00BD53BC /* PCATableViewController.m in Sources */,
 				63C108D719DA2CB2005E8C45 /* CatalyzeUser.m in Sources */,
 				63C108E819DA2CB2005E8C45 /* Mrn.m in Sources */,
 				63C108DA19DA2CB2005E8C45 /* Guardian.m in Sources */,
@@ -828,24 +982,28 @@
 				63C108DD19DA2CB2005E8C45 /* Language.m in Sources */,
 				63166E07197C722B006D78D2 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				63166E08197C722B006D78D2 /* TPKeyboardAvoidingTableView.m in Sources */,
+				E1715C0A1BE17AA6004DA504 /* PCAEditViewController.m in Sources */,
 				63C108D119DA2CB2005E8C45 /* CatalyzeEntry.m in Sources */,
 				63C108EC19DA2CB2005E8C45 /* SocialId.m in Sources */,
 				63C108D619DA2CB2005E8C45 /* CatalyzeReference.m in Sources */,
 				63C108E019DA2CB2005E8C45 /* AFHTTPRequestOperationManager.m in Sources */,
 				63C108DB19DA2CB2005E8C45 /* HealthPlan.m in Sources */,
-				63DF0CC219CF7AFD005814BA /* PCAAllDoneViewController.m in Sources */,
+				63DF0CC219CF7AFD005814BA /* PCASummaryViewController.m in Sources */,
 				63C108E119DA2CB2005E8C45 /* AFHTTPSessionManager.m in Sources */,
+				875C44B21BCE3FA100055F9E /* PCAHistoryViewController.m in Sources */,
 				63AB51391A9D26960061D99F /* PCAPatientStatsViewController.m in Sources */,
 				63C108D819DA2CB2005E8C45 /* Email.m in Sources */,
-				632E4E62197E1A2A00326376 /* PCAMainViewController.m in Sources */,
+				632E4E62197E1A2A00326376 /* PCASurveyViewController.m in Sources */,
 				63C108EB19DA2CB2005E8C45 /* PhoneNumber.m in Sources */,
 				63C108E519DA2CB2005E8C45 /* AFURLRequestSerialization.m in Sources */,
 				63C108E719DA2CB2005E8C45 /* AFURLSessionManager.m in Sources */,
 				63C108E319DA2CB2005E8C45 /* AFSecurityPolicy.m in Sources */,
 				63C108D419DA2CB2005E8C45 /* CatalyzeObject.m in Sources */,
 				63166E09197C722B006D78D2 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
+				875C44AC1BCE3F4E00055F9E /* PCASettingsViewController.m in Sources */,
 				63C108D019DA2CB2005E8C45 /* Catalyze.m in Sources */,
 				63DE728C19AE3742001AA9B9 /* PCAPatientTableViewController.m in Sources */,
+				875C44AF1BCE3F8A00055F9E /* PCAProfileViewController.m in Sources */,
 				63B503CD18FB43C20017F906 /* PCAAppDelegate.m in Sources */,
 				63C108E219DA2CB2005E8C45 /* AFNetworkReachabilityManager.m in Sources */,
 				63C108D219DA2CB2005E8C45 /* CatalyzeFileManager.m in Sources */,
@@ -939,6 +1097,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1013,6 +1172,7 @@
 					"-Objc",
 					"-all_load",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.asu.dhganey.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -1041,6 +1201,7 @@
 					"-Objc",
 					"-all_load",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.asu.dhganey.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -1063,6 +1224,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "PCA-ThesisTests/PCA-ThesisTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.asu.dhganey.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -1081,6 +1243,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PCA-Thesis/PCA-Thesis-Prefix.pch";
 				INFOPLIST_FILE = "PCA-ThesisTests/PCA-ThesisTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.asu.dhganey.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;

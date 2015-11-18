@@ -2,8 +2,8 @@
 //  PCASignupViewController.m
 //  PCA-Thesis
 //
-//  Created by David Ganey on 7/20/14.
-//  Copyright (c) 2014 dhganey. All rights reserved.
+//  Copyright (c) 2015 David Ganey and Jarrett Wilkes.
+//  All rights reserved.
 //
 
 #import "PCASignupViewController.h"
@@ -17,9 +17,6 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
     return self;
 }
 
@@ -27,7 +24,10 @@
 {
     [super viewDidLoad];
     
-    //[self.view setBackgroundColor:[UIColor clearColor]];
+    NSDictionary *size = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"Arial" size:20.0],NSFontAttributeName, [UIColor whiteColor], NSForegroundColorAttributeName, nil];
+    self.navigationController.navigationBar.titleTextAttributes = size;
+    self.navigationController.navigationBar.barTintColor = MAYO_CLINIC_NAVY2;
+    self.view.backgroundColor = MAYO_CLINIC_NAVY;
     
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     tapGesture.cancelsTouchesInView = NO;
@@ -66,12 +66,6 @@
     [self.view endEditing:YES];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 /**
  Called when user presses cancel. Dismisses the view controller.
  @param sender id of cancel button
@@ -100,28 +94,19 @@
         [fullName setFirstName:[self.firstNameField.text capitalizedString]];
         [fullName setLastName:[self.lastNameField.text capitalizedString]];
         
-        [CatalyzeUser signUpWithUsernameInBackground:self.usernameField.text email:userEmail name:fullName password:self.passwordField.text success:^(CatalyzeUser *result)
+        // need to include these values as "extras" so we can access them later
+        NSMutableDictionary *extras = [[NSMutableDictionary alloc] init];
+        [extras setValue:self.phoneField.text forKey:@"phone"];
+        [extras setValue:self.zipField.text forKey:@"zip"];
+        [extras setValue:self.idField.text forKey:@"patientID"];
+        [extras setValue:[self.genderControl titleForSegmentAtIndex:[self.genderControl selectedSegmentIndex]] forKey:@"gender"];
+        
+        // create user account with the entered values
+        [CatalyzeUser signUpWithUsernameInBackground:self.usernameField.text email:userEmail name:fullName password:self.passwordField.text inviteCode:@"" extras:extras success:^(CatalyzeUser *result)
         {            
             NSLog(@"signed up successfully");
             
-            //finish adding data to the user
-            
-            PhoneNumber *phoneNum = [[PhoneNumber alloc] init];
-            [phoneNum setPreferred:self.phoneField.text];
-            [[CatalyzeUser currentUser] setPhoneNumber:phoneNum];
-
-            [CatalyzeUser currentUser].gender =  [self.genderControl titleForSegmentAtIndex:[self.genderControl selectedSegmentIndex]];
-            
-            [[CatalyzeUser currentUser] setExtra:self.zipField.text forKey:@"zipCode"];
-            
-            //users begin as patients but can be changed manually later
-            [CatalyzeUser currentUser].type = @"patient";
-            [[CatalyzeUser currentUser] setExtra:self.idField.text forKey:@"patientID"];
-            
-            [[CatalyzeUser currentUser] saveInBackground];
-            
             [self prepareUserTranslationClass];
-            
             [self dismissViewControllerAnimated:YES completion:nil];
         }
         failure:^(NSDictionary *result, int status, NSError *error) //callback if signup fails

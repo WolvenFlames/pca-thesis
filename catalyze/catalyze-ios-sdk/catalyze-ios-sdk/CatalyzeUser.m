@@ -19,6 +19,7 @@
 #import "Catalyze.h"
 
 #define kEncodeKeyUsersId @"users_id"
+#define kEncodeKeyInviteCode @"invite_code"
 #define kEncodeKeyActive @"active"
 #define kEncodeKeyCreatedAt @"created_at"
 #define kEncodeKeyUpdatedAt @"updated_at"
@@ -52,6 +53,7 @@
 
 @implementation CatalyzeUser
 @synthesize usersId = _usersId;
+@synthesize inviteCode = _inviteCode;
 @synthesize active = _active;
 @synthesize createdAt = _createdAt;
 @synthesize updatedAt = _updatedAt;
@@ -100,6 +102,7 @@ static CatalyzeUser *currentUser;
 
 - (void)encodeWithCoder:(NSCoder *)aCoder {
     [aCoder encodeObject:_usersId forKey:kEncodeKeyUsersId];
+    [aCoder encodeObject:_inviteCode forKey:kEncodeKeyInviteCode];
     [aCoder encodeObject:_active forKey:kEncodeKeyActive];
     [aCoder encodeObject:_createdAt forKey:kEncodeKeyCreatedAt];
     [aCoder encodeObject:_updatedAt forKey:kEncodeKeyUpdatedAt];
@@ -132,6 +135,7 @@ static CatalyzeUser *currentUser;
     self = [self init];
     if (self) {;
         [self setUsersId:[aDecoder decodeObjectForKey:kEncodeKeyUsersId]];
+        [self setInviteCode:[aDecoder decodeObjectForKey:kEncodeKeyInviteCode]];
         [self setActive:[aDecoder decodeObjectForKey:kEncodeKeyActive]];
         [self setCreatedAt:[aDecoder decodeObjectForKey:kEncodeKeyCreatedAt]];
         [self setUpdatedAt:[aDecoder decodeObjectForKey:kEncodeKeyUpdatedAt]];
@@ -188,7 +192,7 @@ static CatalyzeUser *currentUser;
     if (![dob isKindOfClass:[NSDate class]]) {
         NSDateFormatter *format = [[NSDateFormatter alloc] init];
         [format setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
-        [format setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
+        [format setDateFormat:@"yyyy-MM-dd"];
         _dob = [format dateFromString:(NSString *)dob];
     } else {
         _dob = dob;
@@ -200,7 +204,7 @@ static CatalyzeUser *currentUser;
 }
 
 - (void)logoutWithSuccess:(CatalyzeSuccessBlock)success failure:(CatalyzeFailureBlock)failure {
-    [CatalyzeHTTPManager doGet:@"/auth/signout" success:^(id result) {
+    [CatalyzeHTTPManager doGet:@"/auth/signout" withParams:nil success:^(id result) {
         currentUser = nil;
         
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:kCatalyzeAuthorizationKey];
@@ -263,7 +267,11 @@ static CatalyzeUser *currentUser;
 }
 
 + (void)signUpWithUsernameInBackground:(NSString *)username email:(Email *)email name:(Name *)name  password:(NSString *)password inviteCode:(NSString *)inviteCode success:(CatalyzeUserSuccessBlock)success failure:(CatalyzeFailureBlock)failure {
-    NSDictionary *body = @{@"username" : username, @"email" : [email JSON:[Email class]], @"name" : [name JSON:[Name class]], @"password": password, @"inviteCode" : inviteCode};
+    [CatalyzeUser signUpWithUsernameInBackground:username email:email name:name password:password inviteCode:inviteCode extras:@{} success:success failure:failure];
+}
+
++ (void)signUpWithUsernameInBackground:(NSString *)username email:(Email *)email name:(Name *)name  password:(NSString *)password inviteCode:(NSString *)inviteCode extras:(NSDictionary *)extras success:(CatalyzeUserSuccessBlock)success failure:(CatalyzeFailureBlock)failure {
+    NSDictionary *body = @{@"username" : username, @"email" : [email JSON:[Email class]], @"name" : [name JSON:[Name class]], @"password": password, @"inviteCode" : inviteCode, @"extras": extras};
     [CatalyzeHTTPManager doPost:@"/users" withParams:body success:^(id result) {
         currentUser = [CatalyzeUser user];
         NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:result];
@@ -351,7 +359,7 @@ static CatalyzeUser *currentUser;
 }
 
 - (void)retrieveInBackgroundWithSuccess:(CatalyzeSuccessBlock)success failure:(CatalyzeFailureBlock)failure {
-    [CatalyzeHTTPManager doGet:[NSString stringWithFormat:@"/users/%@", _usersId] success:^(id result) {
+    [CatalyzeHTTPManager doGet:[NSString stringWithFormat:@"/users/%@", _usersId] withParams:nil success:^(id result) {
         NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:result];
         
         dict = [CatalyzeUser modifyDict:dict];
@@ -376,9 +384,10 @@ static CatalyzeUser *currentUser;
 }
 
 - (void)deleteInBackgroundWithSuccess:(CatalyzeSuccessBlock)success failure:(CatalyzeFailureBlock)failure {
-    [CatalyzeHTTPManager doDelete:[NSString stringWithFormat:@"/users/%@", _usersId] success:^(id result) {
+    [CatalyzeHTTPManager doDelete:[NSString stringWithFormat:@"/users/%@", _usersId] withParams:nil success:^(id result) {
         currentUser = nil;
         self.usersId= nil;
+        self.inviteCode = nil;
         self.active= nil;
         self.createdAt= nil;
         self.updatedAt= nil;

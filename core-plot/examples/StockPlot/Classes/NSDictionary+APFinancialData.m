@@ -1,4 +1,4 @@
-#import "NSDictionary+APFinancalData.h"
+#import "NSDictionary+APFinancialData.h"
 
 @interface NSDateFormatter(yahooCSVDateFormatter)
 
@@ -23,7 +23,7 @@
 
 @end
 
-@implementation  NSDictionary(APFinancalData)
+@implementation NSDictionary(APFinancialData)
 
 +(id)dictionaryWithCSVLine:(NSString *)csvLine
 {

@@ -113,7 +113,7 @@ void drawErrorText(CGContextRef context, CGRect rect)
     return kQCPlugInTimeModeNone;
 }
 
--(id)init
+-(instancetype)init
 {
     if ( (self = [super init]) ) {
         /*
@@ -538,7 +538,8 @@ void drawErrorText(CGContextRef context, CGRect rect)
     CGColorSpaceRef rgbColorSpace = CGColorSpaceCreateDeviceRGB();
     [img lockBufferRepresentationWithPixelFormat:pixelFormat colorSpace:rgbColorSpace forBounds:[img imageBounds]];
     CGColorSpaceRelease(rgbColorSpace);
-    void *baseAddress           = (void *)[img bufferBaseAddress];
+
+    const void *baseAddress     = [img bufferBaseAddress];
     NSUInteger pixelsWide       = [img bufferPixelsWide];
     NSUInteger pixelsHigh       = [img bufferPixelsHigh];
     NSUInteger bitsPerComponent = 8;

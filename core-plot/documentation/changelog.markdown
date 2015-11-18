@@ -1,13 +1,14 @@
-# Release 2.0 (TBD)
+# Release 1.6 (May 9, 2015)
 
 ## Release Notes
 
-To be determined.
+This release adds support for @3x and stretchable images, plot area fill bands, new axis and plot delegate methods, and trackpad and scroll wheel gestures on the Mac. The behavior of all axis and plot xxxWasSelected delegate methods changed to require both a down and up event on the same element instead of only the down event. The deployment target has increased to iOS 5.0 and Mac OS X 10.7 and all iOS clients must now link against the Accelerate framework.
 
 ## Details
 - **New**: Added hand cursors to the Mac hosting view to indicate when user interaction is enabled and when dragging is in progress.
 - **New**: Added two additional initialization methods to `CPTImage`. 
 - **New**: Added a dependency on the Accelerate framework. All iOS clients must now link against this framework.
+- **New**: Added a shared header file for apps using Core Plot with CocoaPods.
 - **New**: Added support for pinch zoom gestures on the Mac.
 - **New**: Added support for trackpad and mouse wheel scrolling gestures on the Mac.
 - **New**: Added a scroll wheel event to `<CPTResponder>`.

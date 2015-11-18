@@ -2,8 +2,8 @@
 //  PCAViewController.m
 //  PCA-Thesis
 //
-//  Created by David Ganey on 4/13/14.
-//  Copyright (c) 2014 dhganey. All rights reserved.
+//  Copyright (c) 2015 David Ganey and Jarrett Wilkes.
+//  All rights reserved.
 //
 
 #import "PCALoginViewController.h"
@@ -17,18 +17,49 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    // need a scrollView for convenience purposes -- so keyboard doesn't block content
+    [self.scrollView setShowsVerticalScrollIndicator:YES];
+    [self.scrollView setScrollEnabled:YES];
+    [self.scrollView setUserInteractionEnabled:YES];
+    [self.view addSubview:self.scrollView];
+    [self.scrollView setContentSize:CGSizeMake(320,816)];       // extra 248 for scrolling
     
-    //[self.view setBackgroundColor:[UIColor clearColor]];
+    // add all UI elements to scrollView
+    [self.scrollView addSubview:self.mayoLogo];
+    [self.scrollView addSubview:self.usernameField];
+    [self.scrollView addSubview:self.passwordField];
+    [self.scrollView addSubview:self.loginButton];
+    [self.scrollView addSubview:self.signupButton];
+    [self.scrollView addSubview:self.forgotPasswordButton];
+    
+    // empty the username and password fields
+    self.usernameField.text = @"";
+    self.passwordField.text = @"";
+    self.usernameField.borderStyle = UITextBorderStyleRoundedRect;
+    self.passwordField.borderStyle = UITextBorderStyleRoundedRect;
+    self.view.backgroundColor = MAYO_CLINIC_NAVY;
+    
+    NSDictionary *size = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"Arial" size:20.0],NSFontAttributeName, [UIColor whiteColor], NSForegroundColorAttributeName, nil];
+    self.navigationController.navigationBar.titleTextAttributes = size;
+    self.navigationController.navigationBar.barTintColor = MAYO_CLINIC_NAVY2;
+    
+    UIImage *bgImage = [UIImage imageNamed: @"background-login.png"];       // load image
+    self.backgroundImageView = [[UIImageView alloc] initWithImage:bgImage];     // initialize image view with image
+    [self.backgroundImageView sizeToFit];                           // scale image to fit frame
+    self.backgroundImageView.contentMode = UIViewContentModeScaleAspectFit;
+    CGRect frame = self.backgroundImageView.frame;
+    float imgFactor = frame.size.height / frame.size.width;         // configure frame settings
+    frame.size.width = [[UIScreen mainScreen] bounds].size.width;
+    frame.size.height = frame.size.width * imgFactor;
+    self.backgroundImageView.frame = frame;
+    [self.scrollView addSubview:self.backgroundImageView];            // add image view as subview to main view
+    [self.scrollView sendSubviewToBack:self.backgroundImageView];     // send image to background so it doesn't cover objects
     
     if ([CatalyzeUser currentUser]) //if someone is logged in
     {
         [self performSegueWithIdentifier:@"doneLoggingSegue" sender:self];
     }
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
 }
 
 /**
@@ -38,7 +69,10 @@
  */
 -(void) viewWillAppear:(BOOL)animated
 {
-    self.passwordField.text = @""; //empty the password field
+    // check if user chose "remember my username" option in settings
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    self.usernameField.text = [defaults valueForKey:@"username"];
+    self.passwordField.text = @"";
 }
 
 /**
@@ -156,7 +190,7 @@
     if (self.usernameField.text.length > 0)
     {
         NSString* requestString = [NSString stringWithFormat:@"/%@/reset/user/%@", [Catalyze applicationId], self.usernameField.text];
-        [CatalyzeHTTPManager doGet:requestString success:^(id result)
+        [CatalyzeHTTPManager doGet:requestString withParams:(NULL) success:^(id result)
          {
              [[[UIAlertView alloc] initWithTitle:@"Success" message:@"Please check your email to complete the reset process." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
          } failure:^(NSDictionary *result, int status, NSError *error)
